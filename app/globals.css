@@ -15,6 +15,7 @@
   --color-primary-200: #f7f7c2;
   --color-primary-100: #fafadc;
   --color-primary-50: #fcfce8;
+
   --color-secondary-900: #133131;
   --color-secondary-800: #2b6e6e;
   --color-secondary-700: #3db1b1;
@@ -25,6 +26,7 @@
   --color-secondary-200: #dcf0f0;
   --color-secondary-100: #e7f5f5;
   --color-secondary-50: #edf7f7;
+
   --color-neutral-900: #141418;
   --color-neutral-700: #353541;
   --color-neutral-600: #454555;
@@ -33,20 +35,27 @@
   --color-neutral-300: #9797aa;
   --color-neutral-100: #e0e0e4;
   --color-neutral-50: #f1f1f3;
+
   --color-success-500: #34b35b;
   --color-success-400: #5ace7c;
   --color-success-300: #91e4aa;
+
   --color-error-600: #cb2525;
   --color-error-500: #df4e4e;
   --color-error-400: #e57171;
+
   --color-danger-600: #f38e30;
   --color-danger-500: #f5a042;
   --color-danger-300: #f9c378;
+
+  --color-black: #010108;
+
   --rounded-sm: 4px;
   --rounded-md: 8px;
   --rounded-lg: 12px;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.3);
+  /* shadcn */
+  --background: var(--color-black);
+  --foreground: #fff;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.147 0.004 49.3);
   --popover: oklch(1 0 0);
@@ -80,8 +89,60 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-sans);
-  --font-heading: var(--font-heading);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+
+  --color-neutral-50: var(--color-neutral-50);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-900: var(--color-neutral-900);
+
+  --color-success-300: var(--color-success-300);
+  --color-success-400: var(--color-success-400);
+  --color-success-500: var(--color-success-500);
+
+  --color-error-400: var(--color-error-400);
+  --color-error-500: var(--color-error-500);
+  --color-error-600: var(--color-error-600);
+
+  --color-danger-300: var(--color-danger-300);
+  --color-danger-500: var(--color-danger-500);
+  --color-danger-600: var(--color-danger-600);
+
+  --color-black: var(--color-black);
+
+  --radius-sm: var(--rounded-sm);
+  --radius-md: var(--rounded-md);
+  --radius-lg: var(--rounded-lg);
+  /* shadcn */
+  /* FONT */
+  --font-inter: var(--font-inter);
+  --font-heading: Arial;
+  --font-manrope: var(--font-manrope);
+  /* COMPONENTS */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -113,6 +174,7 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  /* RADIUS */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -123,7 +185,7 @@
 }
 
 /* Dark theme */
-.dark {
+/* .dark {
   --background: oklch(0.147 0.004 49.3);
   --foreground: oklch(0.986 0.002 67.8);
   --card: oklch(0.214 0.009 43.1);
@@ -155,42 +217,149 @@
   --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.547 0.021 43.1);
-}
+} */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-body-m;
   }
   html {
-    @apply font-sans;
+    @apply font-inter;
   }
-  h1{
-
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0;
   }
-  h2{
-
+  h1 {
+    font-size: 44px;
   }
-  h3{
-
+  h2 {
+    font-size: 42px;
   }
-  h4{
-
+  h3 {
+    font-size: 36px;
   }
-  h5{
-
+  h4 {
+    font-size: 32px;
   }
-  h6{
-
+  h5 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 16px;
   }
 }
 
-
-@utility{}
-
-
-.text-display-1{
+@utility text-display-1 {
   line-height: 1.4;
+  font-size: 64px;
+  font-weight: 800;
+}
+@utility text-display-2 {
+  line-height: 1.4;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+@utility text-body-xl {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 20px;
+}
+@utility text-body-l {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 18px;
+}
+@utility text-body-m {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  font-size: 16px;
+}
+@utility text-body-s {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+@utility text-body-xs {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+@utility text-caption-l {
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+@utility text-caption-m {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+@utility text-caption-s {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 12px;
+}
+
+@utility text-button-xl {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+@utility text-button-l {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+@utility text-button-m {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+@utility text-button-s {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+@utility text-label-m {
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  font-size: 12px;
+}
+
+@utility text-label-s {
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  font-size: 12px;
 }

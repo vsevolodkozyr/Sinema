@@ -17,7 +17,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={cn("h-full", "antialiased", FInter.variable, FManrope)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="dark min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

@@ -7,59 +7,193 @@ export default function Home() {
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         {/* Primary */}
         <div className="flex gap-3">
-          <div className="flex flex-col gap-2">
-            <Button size={"default"}>Button</Button>
-            <Button size="default" disabled>
-              Button
-            </Button>
-            <Button size={"m"}>Button</Button>
-            <Button size="m" disabled>
-              Button
-            </Button>
-            <Button size={"xl"}>Button</Button>
-            <Button size="xl" disabled>
-              Button
-            </Button>
-            <Button size={"xl-2"}>Button</Button>
-            <Button size="xl-2" disabled>
-              Button
-            </Button>
-            <Button size={"xl-3"}>Button</Button>
-            <Button size="xl-3" disabled>
-              Button
-            </Button>
+          <div className="flex gap-3">
+            <div className="flex flex-col gap-2">
+              <Button size={"default"}>Button</Button>
+              <Button size="default" disabled>
+                Button
+              </Button>
+              <Button size={"m"}>Button</Button>
+              <Button size="m" disabled>
+                Button
+              </Button>
+              <Button size={"xl"}>Button</Button>
+              <Button size="xl" disabled>
+                Button
+              </Button>
+              <Button size={"xl-2"}>Button</Button>
+              <Button size="xl-2" disabled>
+                Button
+              </Button>
+              <Button size={"xl-3"}>Button</Button>
+              <Button size="xl-3" disabled>
+                Button
+              </Button>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Button size={"icon"}>
+                <Search />
+              </Button>
+              <Button size="icon" disabled>
+                <Search />
+              </Button>
+              <Button size={"icon-m"}>
+                <Search />
+              </Button>
+              <Button size="icon-m" disabled>
+                <Search />
+              </Button>
+              <Button size={"icon-xl"}>
+                <Search />
+              </Button>
+              <Button size="icon-xl" disabled>
+                <Search />
+              </Button>
+              <Button size={"icon-xl-2"}>
+                <Search />
+              </Button>
+              <Button size="icon-xl-2" disabled>
+                <Search />
+              </Button>
+              <Button size={"icon-xl-3"}>
+                <Search />
+              </Button>
+              <Button size="icon-xl-3" disabled>
+                <Search />
+              </Button>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <Button size={"icon"}>
-              <Search />
-            </Button>
-            <Button size="icon" disabled>
-              <Search />
-            </Button>
-            <Button size={"icon-m"}>
-              <Search />
-            </Button>
-            <Button size="icon-m" disabled>
-              <Search />
-            </Button>
-            <Button size={"icon-xl"}>
-              <Search />
-            </Button>
-            <Button size="icon-xl" disabled>
-              <Search />
-            </Button>
-            <Button size={"icon-xl-2"}>
-              <Search />
-            </Button>
-            <Button size="icon-xl-2" disabled>
-              <Search />
-            </Button>
-            <Button size={"icon-xl-3"}>
-              <Search />
-            </Button>
-            <Button size="icon-xl-3" disabled>
-              <Search />
-            </Button>
+          <div className="flex gap-3">
+            <div className="flex flex-col gap-2">
+              <Button variant="outline" size={"default"}>
+                Button
+              </Button>
+              <Button variant="outline" size="default" disabled>
+                Button
+              </Button>
+              <Button variant="outline" size={"m"}>
+                Button
+              </Button>
+              <Button variant="outline" size="m" disabled>
+                Button
+              </Button>
+              <Button variant="outline" size={"xl"}>
+                Button
+              </Button>
+              <Button variant="outline" size="xl" disabled>
+                Button
+              </Button>
+              <Button variant="outline" size={"xl-2"}>
+                Button
+              </Button>
+              <Button variant="outline" size="xl-2" disabled>
+                Button
+              </Button>
+              <Button variant="outline" size={"xl-3"}>
+                Button
+              </Button>
+              <Button variant="outline" size="xl-3" disabled>
+                Button
+              </Button>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Button variant="outline" size={"icon"}>
+                <Search />
+              </Button>
+              <Button variant="outline" size="icon" disabled>
+                <Search />
+              </Button>
+              <Button variant="outline" size={"icon-m"}>
+                <Search />
+              </Button>
+              <Button variant="outline" size="icon-m" disabled>
+                <Search />
+              </Button>
+              <Button variant="outline" size={"icon-xl"}>
+                <Search />
+              </Button>
+              <Button variant="outline" size="icon-xl" disabled>
+                <Search />
+              </Button>
+              <Button variant="outline" size={"icon-xl-2"}>
+                <Search />
+              </Button>
+              <Button variant="outline" size="icon-xl-2" disabled>
+                <Search />
+              </Button>
+              <Button variant="outline" size={"icon-xl-3"}>
+                <Search />
+              </Button>
+              <Button variant="outline" size="icon-xl-3" disabled>
+                <Search />
+              </Button>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="flex flex-col gap-2">
+              <Button variant="text" size={"default"}>
+                Button
+              </Button>
+              <Button variant="text" size="default" disabled>
+                Button
+              </Button>
+              <Button variant="text" size={"m"}>
+                Button
+              </Button>
+              <Button variant="text" size="m" disabled>
+                Button
+              </Button>
+              <Button variant="text" size={"xl"}>
+                Button
+              </Button>
+              <Button variant="text" size="xl" disabled>
+                Button
+              </Button>
+              <Button variant="text" size={"xl-2"}>
+                Button
+              </Button>
+              <Button variant="text" size="xl-2" disabled>
+                Button
+              </Button>
+              <Button variant="text" size={"xl-3"}>
+                Button
+              </Button>
+              <Button variant="text" size="xl-3" disabled>
+                Button
+              </Button>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Button variant="text" size={"icon"}>
+                <Search />
+              </Button>
+              <Button variant="text" size="icon" disabled>
+                <Search />
+              </Button>
+              <Button variant="text" size={"icon-m"}>
+                <Search />
+              </Button>
+              <Button variant="text" size="icon-m" disabled>
+                <Search />
+              </Button>
+              <Button variant="text" size={"icon-xl"}>
+                <Search />
+              </Button>
+              <Button variant="text" size="icon-xl" disabled>
+                <Search />
+              </Button>
+              <Button variant="text" size={"icon-xl-2"}>
+                <Search />
+              </Button>
+              <Button variant="text" size="icon-xl-2" disabled>
+                <Search />
+              </Button>
+              <Button variant="text" size={"icon-xl-3"}>
+                <Search />
+              </Button>
+              <Button variant="text" size="icon-xl-3" disabled>
+                <Search />
+              </Button>
+            </div>
           </div>
         </div>
         {/* Outline */}

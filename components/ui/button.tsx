@@ -11,8 +11,8 @@ const buttonVariants = cva(
         primary:
           "bg-primary-500 text-primary-foreground rounded-[4px] hover:bg-primary-600 active:bg-primary-300 disabled:bg-neutral-400 disabled:text-neutral-600",
         outline:
-          "border-border bg-transparent hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-input/30",
-        text: "",
+          "border-border bg-transparent border-primary-500 rounded-[4px] text-primary-500 hover:text-primary-600 hover:border-primary-600 active:text-primary-300 active:border-primary-300 disabled:text-neutral-600 disabled:border-neutral-400",
+        text: "bg-transparent rounded-[4px] text-primary-500 hover:text-primary-600  active:text-primary-300  disabled:text-neutral-600 ",
       },
       size: {
         default: "h-[28px] gap-2 px-4 typo-button-xs",

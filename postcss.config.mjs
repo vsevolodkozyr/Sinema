@@ -7,6 +7,7 @@ const config = {
       selectorBlackList: [],
       minPixelValue: 1,
     },
+    autoprefixer: {},
   },
 };
 

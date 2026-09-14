@@ -33,6 +33,7 @@
   --color-neutral-500: #565669;
   --color-neutral-400: #73738d;
   --color-neutral-300: #9797aa;
+  --color-neutral-200: #bcbcc6;
   --color-neutral-100: #e0e0e4;
   --color-neutral-50: #f1f1f3;
 
@@ -113,6 +114,7 @@
 
   --color-neutral-50: var(--color-neutral-50);
   --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
   --color-neutral-300: var(--color-neutral-300);
   --color-neutral-400: var(--color-neutral-400);
   --color-neutral-500: var(--color-neutral-500);
@@ -175,9 +177,7 @@
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   /* RADIUS */
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
+
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
@@ -238,6 +238,8 @@
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: 0;
+    color: var(--foreground);
+    @apply font-manrope;
   }
   h1 {
     font-size: 44px;
@@ -357,6 +359,7 @@
 }
 
 @utility typo-label-m {
+  @apply font-manrope;
   font-weight: 500;
   letter-spacing: 0.8px;
   line-height: 1.4;
@@ -364,8 +367,9 @@
 }
 
 @utility typo-label-s {
-  font-weight: 400;
+  @apply font-manrope;
+  font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.4;
-  font-size: 12px;
+  font-size: 10.5px;
 }

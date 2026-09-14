@@ -15,7 +15,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", FInter.variable, FManrope)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        "font-inter",
+        FInter.variable,
+        FManrope,
+      )}
     >
       <body className="dark min-h-full flex flex-col">{children}</body>
     </html>

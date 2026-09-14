@@ -61,7 +61,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.147 0.004 49.3);
   --primary: oklch(0.214 0.009 43.1);
-  --primary-foreground: oklch(0.986 0.002 67.8);
+  --primary-foreground: var(--color-black);
   --secondary: oklch(0.96 0.002 17.2);
   --secondary-foreground: oklch(0.214 0.009 43.1);
   --muted: oklch(0.96 0.002 17.2);
@@ -224,7 +224,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground text-body-m;
+    @apply bg-background text-foreground typo-body-m font-inter;
   }
   html {
     @apply font-inter;
@@ -259,105 +259,111 @@
   }
 }
 
-@utility text-display-1 {
+@utility typo-display-1 {
   line-height: 1.4;
   font-size: 64px;
   font-weight: 800;
 }
-@utility text-display-2 {
+@utility typo-display-2 {
   line-height: 1.4;
   font-size: 48px;
   font-weight: 800;
 }
 
-@utility text-body-xl {
+@utility typo-body-xl {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 20px;
 }
-@utility text-body-l {
+@utility typo-body-l {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 18px;
 }
-@utility text-body-m {
+@utility typo-body-m {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5;
   font-size: 16px;
 }
-@utility text-body-s {
+@utility typo-body-s {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5;
   font-size: 14px;
 }
-@utility text-body-xs {
+@utility typo-body-xs {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5;
   font-size: 12px;
 }
 
-@utility text-caption-l {
+@utility typo-caption-l {
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 14px;
 }
 
-@utility text-caption-m {
+@utility typo-caption-m {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 14px;
 }
 
-@utility text-caption-s {
+@utility typo-caption-s {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 12px;
 }
 
-@utility text-button-xl {
+@utility typo-button-xl {
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 16px;
 }
 
-@utility text-button-l {
+@utility typo-button-l {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 16px;
 }
 
-@utility text-button-m {
+@utility typo-button-m {
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 14px;
 }
 
-@utility text-button-s {
+@utility typo-button-s {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.4;
   font-size: 14px;
 }
+@utility typo-button-xs {
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 12px;
+}
 
-@utility text-label-m {
+@utility typo-label-m {
   font-weight: 500;
   letter-spacing: 0.8px;
   line-height: 1.4;
   font-size: 12px;
 }
 
-@utility text-label-s {
+@utility typo-label-s {
   font-weight: 400;
   letter-spacing: 0.8px;
   line-height: 1.4;

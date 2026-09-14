@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "antialiased",
         "font-inter",
         FInter.variable,
-        FManrope,
+        FManrope.variable,
       )}
     >
       <body className="dark min-h-full flex flex-col">{children}</body>

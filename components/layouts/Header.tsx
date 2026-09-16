@@ -163,11 +163,13 @@ function NoUser() {
 function IsUser() {
   return (
     <div className="flex gap-4 items-center min-w-0 max-w-[200px]">
-      <Avatar className={"shrink-0"}>
-        <AvatarImage src="https://github.com/shadcn.png" />
+      <Avatar className={"flex-none"}>
+        <AvatarImage
+          src="https://github.com/shadcn.png"
+        />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
-      <p className="truncate typo-button-l font-normal shrink">
+      <p className="truncate typo-button-l font-normal shrink min-w-0">
         Seva UserSeva UserSeva UserSeva UserSeva UserSeva UserSeva User
       </p>
     </div>

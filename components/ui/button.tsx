@@ -58,7 +58,7 @@ const buttonVariants = cva(
   },
 );
 
-const arrowStyle = {
+const arrowStyle: Record<string, string> = {
   default: "size-[20px]",
   xl: "size-[24px]",
   "xl-2": "size-[24px]",
@@ -87,11 +87,11 @@ function Button({
       {...props}
     >
       {IconLeft && (
-        <IconLeft className={arrowStyle[size] || arrowStyle["default"]} />
+        <IconLeft className={arrowStyle[size ?? "default"]} />
       )}
       {children}
       {IconRight && (
-        <IconRight className={arrowStyle[size] || arrowStyle["default"]} />
+        <IconRight className={arrowStyle[size ?? "default"]} />
       )}
     </ButtonPrimitive>
   );

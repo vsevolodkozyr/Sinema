@@ -39,13 +39,14 @@ export function FooterNav() {
             <ul className="flex flex-col gap-4">
               {items.map(({ name, href }) => {
                 return (
-                  <Link
-                    key={href}
-                    href={href}
-                    className="typo-button-s text-neutral-200"
-                  >
-                    {name}
-                  </Link>
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="typo-button-s text-neutral-200"
+                    >
+                      {name}
+                    </Link>
+                  </li>
                 );
               })}
             </ul>

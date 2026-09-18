@@ -380,3 +380,22 @@
   line-height: 1.4;
   font-size: 10.5px;
 }
+/* @utility input {
+  @apply border border-neutral-400 
+        bg-neutral-900 
+        font-normal font-manrope 
+        rounded-sm 
+        transition-[color,border-color] 
+        placeholder:text-neutral-300 
+        aria-disabled:pointer-events-none 
+        aria-disabled:cursor-not-allowed 
+        aria-disabled:bg-neutral-700 
+        aria-invalid:border-error-500 
+        file:inline-flex 
+        file:h-7 
+        file:border-0 
+        file:bg-transparent 
+        file:text-sm 
+        file:font-medium 
+        file:text-foreground;
+} */

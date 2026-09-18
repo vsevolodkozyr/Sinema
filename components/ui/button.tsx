@@ -83,16 +83,12 @@ function Button({
   return (
     <ButtonPrimitive
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, color, className }))}
+      className={cn(buttonVariants({ variant, size, color }), className)}
       {...props}
     >
-      {IconLeft && (
-        <IconLeft className={arrowStyle[size ?? "default"]} />
-      )}
+      {IconLeft && <IconLeft className={arrowStyle[size ?? "default"]} />}
       {children}
-      {IconRight && (
-        <IconRight className={arrowStyle[size ?? "default"]} />
-      )}
+      {IconRight && <IconRight className={arrowStyle[size ?? "default"]} />}
     </ButtonPrimitive>
   );
 }

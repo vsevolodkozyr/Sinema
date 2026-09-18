@@ -8,15 +8,21 @@ import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 
 import { Textarea } from "@/components/ui/textarea";
+import { Input, inputVariants } from "./input";
 
-function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
+function InputGroup({
+  className,
+  hSize = "40",
+  ...props
+}: React.ComponentProps<"div"> & VariantProps<typeof inputVariants>) {
   return (
     <div
       data-slot="input-group"
       role="group"
       className={cn(
+        inputVariants({ hSize }),
         `group/input-group
-         relative text-white flex h-10 w-full min-w-0 items-center border 
+         relative text-white flex w-full min-w-0 items-center border 
          transition-[color,border-color] outline-none  
          in-data-[slot=combobox-content]:focus-within:border-inherit 
          in-data-[slot=combobox-content]:focus-within:ring-0 
@@ -33,24 +39,6 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
          has-[>textarea]:h-auto  
          has-[>[data-align=block-end]]:[&>input]:pt-3 
          has-[>[data-align=block-start]]:[&>input]:pb-3`,
-        `border border-neutral-400 
-        bg-neutral-900 px-6 text-[14px] 
-        font-normal font-manrope 
-        leading-[1.4] 
-        rounded-sm 
-        transition-[color,border-color] 
-        placeholder:text-neutral-300 
-        aria-disabled:pointer-events-none 
-        aria-disabled:cursor-not-allowed 
-        aria-disabled:bg-neutral-700 
-        aria-invalid:border-error-500 
-        file:inline-flex 
-        file:h-7 
-        file:border-0 
-        file:bg-transparent 
-        file:text-sm 
-        file:font-medium 
-        file:text-foreground`,
         className,
       )}
       {...props}
@@ -104,16 +92,15 @@ const inputGroupButtonVariants = cva(
   {
     variants: {
       size: {
-        xs: "h-6 gap-1 rounded-none px-1.5 text-xs [&>svg:not([class*='size-'])]:size-3.5",
-        sm: "",
-        "icon-xs":
-          "size-5 p-0 text-xs has-[>svg]:p-0 [&>svg:not([class*='size-'])]:size-5 disabled:text-neutral-300",
-        "icon-sm":
+        icon: "size-6 p-0 has-[>svg]:p-0 [&>svg:not([class*='size-'])]:size-6 disabled:text-neutral-300",
+        "icon-md":
+          "size-7 p-0 has-[>svg]:p-0 [&>svg:not([class*='size-'])]:size-7 disabled:text-neutral-300",
+        "icon-lg":
           "size-8 p-0 has-[>svg]:p-0 [&>svg:not([class*='size-'])]:size-8 disabled:text-neutral-300",
       },
     },
     defaultVariants: {
-      size: "icon-xs",
+      size: "icon",
     },
   },
 );
@@ -122,7 +109,7 @@ function InputGroupButton({
   className,
   type = "button",
   variant = "outline",
-  size = "icon-xs",
+  size = "icon",
   ...props
 }: Omit<React.ComponentProps<typeof Button>, "size" | "type"> &
   VariantProps<typeof inputGroupButtonVariants> & {
@@ -133,6 +120,7 @@ function InputGroupButton({
       type={type}
       data-size={size}
       variant={variant}
+      size={"icon"}
       className={cn(inputGroupButtonVariants({ size }), className)}
       {...props}
     />
@@ -156,11 +144,11 @@ function InputGroupInput({
   ...props
 }: React.ComponentProps<"input">) {
   return (
-    <InputPrimitive
+    <Input
       data-slot="input-group-control"
       className={cn(
-        `flex-1 group-aria-invalid/input-group:placeholder:text-error-500
-          border-0 px-0 bg-transparent 
+        `flex-1 h-auto group-aria-invalid/input-group:placeholder:text-error-500
+          border-0 p-0 bg-transparent 
           ring-0 
           outline-none
           group-has-[>[data-align=inline-end]]/input-group:pr-2 

@@ -9,15 +9,15 @@ import { cn } from "cn";
 export function MovieCard({ released = true }: { released?: boolean }) {
   return (
     <div className="group/card border border-neutral-800 rounded-sm p-1 max-w-[225px]">
-      <img
-        alt="movie poster"
-        width={217}
-        height={316}
-        src={
-          "https://puzzlemania-154aa.kxcdn.com/products/2024/puzzle-trefl-1000-pieces-premium-plus-jurassic-park-movie-poster.webp"
-        }
-        className="w-full aspect-217/316 object-cover rounded-sm"
-      />
+      <div className="w-full aspect-217/316 rounded-sm overflow-hidden relative">
+        <img
+          alt="movie poster"
+          src={
+            "https://puzzlemania-154aa.kxcdn.com/products/2024/puzzle-trefl-1000-pieces-premium-plus-jurassic-park-movie-poster.webp"
+          }
+          className="size-full object-cover rounded-sm group-hover/card:scale-[1.1] transition-[scale] [image-rendering:pixalated]"
+        />
+      </div>
       <div className="px-2 pt-[10px] pb-[6px] flex flex-col">
         <div className="group-hover/card:hidden flex flex-col gap-2 py-0.5 h-[64px]">
           <div className={"flex justify-between gap-[10px] items-start"}>

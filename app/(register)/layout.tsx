@@ -2,8 +2,8 @@ import { Container } from "@/components/layouts/Container";
 
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="">
-      <Container className="h-dvh items-center flex relative justify-center md:justify-start z-3">
+    <div className="min-h-dvh flex">
+      <Container className=" pt-10 mb-10 items-center flex relative justify-center md:justify-start z-3">
         <div className="flex flex-col gap-2 max-w-[364px] w-full">
           {children}
         </div>

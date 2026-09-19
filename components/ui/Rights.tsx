@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Rights() {
   return (
-    <div className="typo-label-l text-neutral-200 flex gap-2 justify-between">
+    <div className="typo-label-l text-neutral-200 flex gap-2 justify-between flex-wrap">
       <p>
         Copyright © 2016 - 2025 Ticketor. <br /> All right reserved.
       </p>

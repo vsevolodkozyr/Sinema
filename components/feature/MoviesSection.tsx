@@ -19,9 +19,9 @@ interface Props {
 export function MoviesSection({}: Props) {
   return (
     <div>
-      <h4 className="mb-2">Currently In Cinemas</h4>
+      <h4 className="mb-2 truncate">Currently In Cinemas</h4>
       <div className="flex gap-3 justify-between items-center mb-4">
-        <h5 className="text-neutral-100 ">
+        <h5 className="text-neutral-100 truncate">
           Discover the latest movies now playing in cinemas — Book your tickets
           today!
         </h5>

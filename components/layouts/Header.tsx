@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
@@ -19,14 +21,14 @@ const nav = [
 ];
 
 export function Header() {
-  const user = true;
+  const user = false;
 
   return (
     <header className="w-full shrink-0 fixed pt-6 z-100">
       <Container>
-        <div className="rounded-lg flex min-h-[65px] items-stretch">
-          <div className="rounded-[inherit] grow-3 bg-black pl-[16px] pr-[16px] sm:pl-[85px] sm:pr-[32px] flex gap-[60px] items-center">
-            <Logo className="md:[&>*:last-child]:block [&>*:last-child]:hidden" />
+        <div className="rounded-lg flex min-h-[55px] sm:min-h-[65px] items-stretch">
+          <div className="rounded-[inherit] sm:grow-3 bg-black pl-[16px] pr-[16px] sm:pl-[85px] sm:pr-[32px] flex gap-[60px] items-center">
+            <Logo className="sm:[&>*:last-child]:block [&>*:last-child]:hidden" />
             <div className="lg:block hidden">
               <ul className="flex gap-4">
                 {nav.map(({ href, name }) => {
@@ -49,15 +51,15 @@ export function Header() {
               </ul>
             </div>
           </div>
-          <div className="flex min-w-0 rounded-[inherit] grow bg-black px-[24px] justify-center items-center">
+          <div className="flex min-w-0 rounded-[inherit] grow bg-black px-2 md:px-[24px] justify-end sm:justify-center items-center">
             <div className="flex min-w-0 items-center">
               <Button size={"icon-xl-2"} variant={"text"} color={"base"}>
                 <Search />
               </Button>
-              <div className="px-[16px] sm:px-[32px] h-[26px] ">
+              <div className="px-[8px] sm:px-[32px] h-[26px] ">
                 <div className="h-full w-px bg-neutral-400"></div>
               </div>
-              <div className={cn("flex shrink min-w-0", user && "gap-1")}>
+              <div className={cn("flex shrink min-w-0", user && "gap-3")}>
                 {!user && <NoUser />}
                 {user && <IsUser />}
                 <div className="lg:hidden">
@@ -151,6 +153,7 @@ function NoUser() {
           variant={"text"}
           color={"base"}
           size={"icon-xl-2"}
+          render={<Link href={"/login"} />}
         >
           <User />
           <p className="absolute bottom-0 typo-button-xs">Login</p>
@@ -162,12 +165,12 @@ function NoUser() {
 
 function IsUser() {
   return (
-    <div className="flex gap-4 items-center min-w-0 max-w-[200px]">
-      <Avatar className={"flex-none"}>
+    <div className="flex gap-4 items-center min-w-0 max-w-[200px] ml-2">
+      <Avatar className={"flex-none size-8 sm:size-10"}>
         <AvatarImage src="https://github.com/shadcn.png" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
-      <p className="truncate typo-button-l font-normal shrink min-w-0">
+      <p className="truncate typo-button-l font-normal shrink min-w-0 hidden sm:block">
         Seva UserSeva UserSeva UserSeva UserSeva UserSeva UserSeva User
       </p>
     </div>

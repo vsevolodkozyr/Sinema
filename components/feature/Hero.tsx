@@ -12,7 +12,7 @@ export function Hero() {
       </div>
       <div className="min-h-dvh pt-header flex items-center">
         <Container className="flex flex-col items-center">
-          <p className="typo-display-xl text-[40px] sm:text-[60px] lg:text-[84px] text-center mb-[37px]">
+          <p className="typo-display-xl text-[40px] sm:text-[60px] lg:text-[84px] text-center mb-[37px] mt-10">
             Book Your Movie <br /> Tickets Now!
           </p>
           <p className="max-w-[300px] sm:max-w-[400px] typo-body-xl text-[16px] sm:text-[20px] font-bold mb-[66px] text-center font-manrope">

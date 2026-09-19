@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         FManrope.variable,
       )}
     >
-      <body className="dark min-h-full flex flex-col">{children}</body>
+      <body className="dark min-h-dvh flex flex-col">{children}</body>
     </html>
   );
 }

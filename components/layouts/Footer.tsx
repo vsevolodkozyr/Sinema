@@ -7,7 +7,7 @@ import { Container } from "./Container";
 export function Footer() {
   return (
     // px-[80px]
-    <footer className="w-full">
+    <footer className="w-full shrink-0">
       <div className="pt-[100px]">
         <Container>
           <div className="flex justify-between items-center gap-10 flex-wrap">

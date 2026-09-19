@@ -61,7 +61,7 @@ export function VerifyForm() {
           </Button>
         </form>
       </div>
-      <div className="flex leading-none justify-between items-center text-neutral-300 typo-button-s">
+      <div className="flex gap-3 leading-none justify-between items-center text-neutral-300 typo-button-s">
         <p>Didn’t receive the code?</p>
         <div className="flex items-center">
           <p>4:35</p>

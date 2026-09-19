@@ -1,6 +1,7 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "cn";
+import React from "react";
 
 const buttonVariants = cva(
   "font-inter group/button inline-flex shrink-0 items-center justify-center rounded-none border border-transparent bg-clip-padding tracking-widest whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5",
@@ -78,17 +79,47 @@ function Button({
   children,
   iconLeft: IconLeft,
   iconRight: IconRight,
+  render,
   ...props
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants> & BtnProps) {
+  const renderContent = (content: React.ReactNode) => (
+    <>
+      {IconLeft && <IconLeft className={arrowStyle[size ?? "default"]} />}
+      {content}
+      {IconRight && <IconRight className={arrowStyle[size ?? "default"]} />}
+    </>
+  );
+
   return (
     <ButtonPrimitive
+      nativeButton={!render}
       data-slot="button"
       className={cn(buttonVariants({ variant, size, color }), className)}
+      render={
+        render
+          ? (renderProps, state) => {
+              if (typeof render === "function") {
+                return render(
+                  {
+                    ...renderProps,
+                    children: renderContent(renderProps.children ?? children),
+                  },
+                  state,
+                );
+              }
+              const element = render as React.ReactElement<{
+                children?: React.ReactNode;
+              }>;
+              return React.cloneElement(element, {
+                ...renderProps,
+                children: renderContent(element.props.children ?? children),
+              });
+            }
+          : undefined
+      }
       {...props}
     >
-      {IconLeft && <IconLeft className={arrowStyle[size ?? "default"]} />}
-      {children}
-      {IconRight && <IconRight className={arrowStyle[size ?? "default"]} />}
+      {render ? children : renderContent(children)}
     </ButtonPrimitive>
   );
 }

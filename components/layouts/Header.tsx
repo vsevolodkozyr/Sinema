@@ -22,7 +22,7 @@ export function Header() {
   const user = true;
 
   return (
-    <header className="w-full">
+    <header className="w-full shrink-0 fixed pt-6 z-100">
       <Container>
         <div className="rounded-lg flex min-h-[65px] items-stretch">
           <div className="rounded-[inherit] grow-3 bg-black pl-[16px] pr-[16px] sm:pl-[85px] sm:pr-[32px] flex gap-[60px] items-center">
@@ -164,9 +164,7 @@ function IsUser() {
   return (
     <div className="flex gap-4 items-center min-w-0 max-w-[200px]">
       <Avatar className={"flex-none"}>
-        <AvatarImage
-          src="https://github.com/shadcn.png"
-        />
+        <AvatarImage src="https://github.com/shadcn.png" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       <p className="truncate typo-button-l font-normal shrink min-w-0">

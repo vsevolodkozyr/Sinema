@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import {
@@ -42,9 +42,7 @@ export function MoviesSection({}: Props) {
           {[0, 5, 3, 1, 2, 23, 34, 45, 56, 10].map((item) => {
             return (
               <CarouselItem key={item} className="basis-auto">
-                <Link href={"/movie"}>
-                  <MovieCard />
-                </Link>
+                <MovieCard />
               </CarouselItem>
             );
           })}

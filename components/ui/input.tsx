@@ -1,6 +1,5 @@
 import * as React from "react";
 import { cn } from "cn";
-import { InputGroup, InputGroupInput } from "./input-group";
 import { cva, VariantProps } from "class-variance-authority";
 import { Input as InputPrimitive } from "@base-ui/react/input";
 

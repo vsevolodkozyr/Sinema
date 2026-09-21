@@ -33,7 +33,7 @@ export function FooterNav() {
       {nav.map(({ name, items }) => {
         return (
           <div key={name} className="flex flex-col gap-[24px]">
-            <p className="font-manrope font-500 text-[16px] text-neutral-50">
+            <p className="font-manrope font-medium text-[16px] text-neutral-50">
               {name}
             </p>
             <ul className="flex flex-col gap-4">

@@ -1,4 +1,9 @@
+import { CastCard } from "@/components/feature/CastCard";
 import { MovieHero } from "@/components/feature/MovieHero";
+import {
+  SectionSlider,
+  SectionSliderItem,
+} from "@/components/feature/SectionSlider";
 import { Container } from "@/components/layouts/Container";
 import { Button } from "@/components/ui/button";
 import { Heart, Ticket } from "lucide-react";
@@ -50,7 +55,11 @@ export default function page() {
             </div>
             <div className="w-full lg:sticky lg:top-[var(--spacing-header)] lg:self-start">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
-                <Button  iconLeft={Ticket} size={"xl-3"} className="w-full hidden md:inline-flex">
+                <Button
+                  iconLeft={Ticket}
+                  size={"xl-3"}
+                  className="w-full hidden md:inline-flex"
+                >
                   Get Ticket
                 </Button>
                 <Button
@@ -64,6 +73,17 @@ export default function page() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="mb-10">
+          <SectionSlider title="Cast">
+            {[0, 5, 3, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17].map((item) => {
+              return (
+                <SectionSliderItem key={item}>
+                  <CastCard className="w-[clamp(170px,15vw,216px)]" />
+                </SectionSliderItem>
+              );
+            })}
+          </SectionSlider>
         </div>
       </Container>
     </div>

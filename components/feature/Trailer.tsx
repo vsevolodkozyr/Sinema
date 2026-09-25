@@ -3,9 +3,9 @@
 import { useState } from "react";
 import PlayIcon from "../../public/icons/play.svg";
 
-export function Trailer() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoId = "22w7z_lT6YM";
+export function Trailer({ autoplay = false, videoId = "22w7z_lT6YM" }: { autoplay?: boolean, videoId?: string;}) {
+  const [isPlaying, setIsPlaying] = useState(autoplay);
+ 
 
   return (
     <div className="relative w-full aspect-video overflow-hidden rounded-lg rounded-b-none bg-black">
@@ -26,7 +26,7 @@ export function Trailer() {
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex size-[82px] items-center justify-center rounded-full text-white shadow-lg transition-transform group-hover:scale-110 border border-primary-50 backdrop-blur-xs">
-              <PlayIcon/>
+              <PlayIcon />
             </div>
           </div>
         </button>

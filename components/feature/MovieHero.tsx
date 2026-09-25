@@ -1,10 +1,15 @@
+"use client";
+
 import { Clapperboard, Ticket } from "lucide-react";
 import { Container } from "../layouts/Container";
 import { Button } from "../ui/button";
 import { Hero } from "./Hero";
 import { Trailer } from "./Trailer";
+import { useTrailerModal } from "@/lib/store/useTrailerModal";
 
 export function MovieHero() {
+  const onOpen = useTrailerModal((state) => state.openTrailer);
+
   return (
     <Hero
       dark
@@ -32,6 +37,7 @@ export function MovieHero() {
                 Get Ticket
               </Button>
               <Button
+                onClick={() => onOpen("22w7z_lT6YM")}
                 iconLeft={Clapperboard}
                 className={"w-full"}
                 size={"xl-3"}

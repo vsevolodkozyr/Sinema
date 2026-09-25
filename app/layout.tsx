@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ModalProvider } from "@/src/providers/ModalProvider";
 
 const FInter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const FManrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -23,7 +24,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         FManrope.variable,
       )}
     >
-      <body className="dark min-h-dvh flex flex-col">{children}</body>
+      <body className="dark min-h-dvh flex flex-col">
+        <ModalProvider />
+        {children}
+      </body>
     </html>
   );
 }

@@ -185,7 +185,7 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation bg-neutral-900 group-hover/carousel:opacity-100 lg:opacity-0 lg:disabled:opacity-0 group-hover/carousel:disabled:opacity-50 lg:focus-visible:opacity-100",
+        "absolute active:-translate-y-[calc(50%-2px)]! touch-manipulation bg-neutral-900 group-hover/carousel:opacity-100 lg:opacity-0 lg:disabled:opacity-0 group-hover/carousel:disabled:opacity-50 lg:focus-visible:opacity-100",
         orientation === "horizontal"
           ? "inset-y-0 left-2 my-auto -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -215,7 +215,7 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation bg-neutral-900 group-hover/carousel:opacity-100 lg:opacity-0 lg:disabled:opacity-0 group-hover/carousel:disabled:opacity-50 lg:focus-visible:opacity-100",
+        "absolute active:-translate-y-[calc(50%-2px)]! touch-manipulation bg-neutral-900 group-hover/carousel:opacity-100 lg:opacity-0 lg:disabled:opacity-0 group-hover/carousel:disabled:opacity-50 lg:focus-visible:opacity-100",
         orientation === "horizontal"
           ? "inset-y-0 right-2 my-auto -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",

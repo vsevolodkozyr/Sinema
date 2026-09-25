@@ -2,13 +2,26 @@
 
 import { useState } from "react";
 import PlayIcon from "../../public/icons/play.svg";
+import { cn } from "@/lib/utils";
 
-export function Trailer({ autoplay = false, videoId = "22w7z_lT6YM" }: { autoplay?: boolean, videoId?: string;}) {
+export function Trailer({
+  autoplay = false,
+  videoId = "22w7z_lT6YM",
+  className,
+}: {
+  autoplay?: boolean;
+  videoId?: string;
+  className?: string;
+}) {
   const [isPlaying, setIsPlaying] = useState(autoplay);
- 
 
   return (
-    <div className="relative w-full aspect-video overflow-hidden rounded-lg rounded-b-none bg-black">
+    <div
+      className={cn(
+        "relative w-full aspect-video overflow-hidden rounded-lg rounded-b-none bg-black",
+        className,
+      )}
+    >
       {!isPlaying ? (
         <button
           type="button"

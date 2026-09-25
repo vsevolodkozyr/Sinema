@@ -17,7 +17,7 @@ export function TrailerModal() {
     >
       <DialogContent
         showCloseButton={false}
-        className="w-full grid-rows-[auto_1fr] gap-0 bg-transparent ring-0 max-w-[calc(100%-1rem)]! p-0 min-[1400px]:max-h-[calc(100dvh)] aspect-video border-0! rounded-lg overflow-visible"
+        className="w-[min(calc(100vw-1rem),calc((100dvh-4.5rem)*16/9),1400px)] max-w-none sm:max-w-none max-h-dvh flex flex-col gap-1 p-0 bg-transparent ring-0 border-0 shadow-none overflow-visible"
       >
         <DialogTitle className="sr-only">
           {title ? `${title} Trailer` : "Movie Trailer"}
@@ -28,15 +28,15 @@ export function TrailerModal() {
               variant="text"
               color="base"
               size="icon-xl-3"
-              className="text-white hover:text-primary-500 transition-colors cursor-pointer justify-self-end"
+              className="text-white hover:text-primary-500 transition-colors cursor-pointer self-end"
               aria-label="Close trailer"
             >
               <X className="size-8" />
             </Button>
           }
         />
-        <div className="rounded-[inherit] overflow-hidden aspect-video min-[1400px]:h-full  min-[1400px]:justify-self-center">
-          {videoId && <Trailer videoId={videoId} autoplay />}
+        <div className="w-full aspect-video rounded-lg overflow-hidden bg-black shadow-2xl">
+          {videoId && <Trailer videoId={videoId} autoplay className="size-full rounded-lg" />}
         </div>
       </DialogContent>
     </Dialog>

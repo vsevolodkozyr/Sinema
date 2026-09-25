@@ -35,6 +35,7 @@ export function PasswordInput<
   fieldState,
   hideDescription = false,
   label = "",
+  ...props
 }: PasswordInputProps<TFieldValues, TName>) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -57,8 +58,8 @@ export function PasswordInput<
       >
         <InputGroupInput
           type={showPassword ? "text" : "password"}
-          placeholder="Search..."
           {...field}
+          {...props}
         />
         <InputGroupAddon align={"inline-end"}>
           <InputGroupButton
@@ -68,6 +69,7 @@ export function PasswordInput<
               e.preventDefault();
               setShowPassword((state) => !state);
             }}
+            aria-label="Show password"
           >
             {showPassword ? <Eye /> : <EyeOff />}
           </InputGroupButton>

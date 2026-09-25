@@ -32,7 +32,7 @@ export function VerifyForm() {
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-6">
         <p className="typo-body-m font-manrope text-neutral-100 text-center">
-          We sent a 6-digit code to your email. Enter it below to verify your
+          We sent a 5-digit code to your email. Enter it below to verify your
           account.
         </p>
         <p className="typo-label-l text-neutral-100 font-manrope flex justify-center gap-1">

@@ -13,19 +13,21 @@ import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 
 interface Props {
-  mb?: string;
+  title?: string;
+  description?: string;
+  children?: React.ReactNode;
 }
 
-export function MoviesSection({}: Props) {
+export function SectionSlider({ title = "", children, description }: Props) {
   return (
     <div>
-      <h4 className="mb-2 truncate">Currently In Cinemas</h4>
-      <div className="flex gap-3 justify-between items-center mb-4">
-        <h5 className="text-neutral-100 truncate">
-          Discover the latest movies now playing in cinemas — Book your tickets
-          today!
-        </h5>
-
+      <div className="flex gap-2 justify-between items-end mb-4">
+        <div className="flex gap-3">
+          <h4 className="truncate">{title}</h4>
+          {description && (
+            <h5 className="text-neutral-100 truncate">{description}</h5>
+          )}
+        </div>
         <Button
           iconRight={ChevronRight}
           variant={"text"}
@@ -38,18 +40,23 @@ export function MoviesSection({}: Props) {
         </Button>
       </div>
       <Carousel className="w-full">
-        <CarouselContent>
-          {[0, 5, 3, 1, 2, 23, 34, 45, 56, 10].map((item) => {
-            return (
-              <CarouselItem key={item} className="basis-auto">
-                <MovieCard />
-              </CarouselItem>
-            );
-          })}
-        </CarouselContent>
+        <CarouselContent>{children}</CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
     </div>
+  );
+}
+
+export function SectionSliderItem({
+  children,
+  ...props
+}: {
+  children?: React.ReactNode;
+}) {
+  return (
+    <CarouselItem className="basis-auto" {...props}>
+      {children}
+    </CarouselItem>
   );
 }

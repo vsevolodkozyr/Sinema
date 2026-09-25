@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -34,17 +34,15 @@ export function Header() {
                 {nav.map(({ href, name }) => {
                   return (
                     <li key={href}>
-                      <Link href={href}>
-                        <Button
-                          className={"font-[400]"}
-                          size={"xl"}
-                          aria-hidden
-                          variant={"text"}
-                          color={"base"}
-                        >
-                          {name}
-                        </Button>
-                      </Link>
+                      <Button
+                        className={"font-[400]"}
+                        size={"xl"}
+                        variant={"text"}
+                        color={"base"}
+                        render={<Link href={href} />}
+                      >
+                        {name}
+                      </Button>
                     </li>
                   );
                 })}
@@ -135,6 +133,7 @@ function NoUser() {
           variant={"text"}
           color={"base"}
           size={"xl"}
+          render={<Link href={"/login"} />}
         >
           <p>Login</p>
         </Button>
@@ -142,6 +141,7 @@ function NoUser() {
           className={"font-normal"}
           iconLeft={DoorOpen}
           variant={"text"}
+          render={<Link href={"/signup"} />}
           size={"xl"}
         >
           <p>Sign Up</p>

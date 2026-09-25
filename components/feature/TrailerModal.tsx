@@ -28,7 +28,7 @@ export function TrailerModal() {
               variant="text"
               color="base"
               size="icon-xl-3"
-              className="text-white hover:text-primary-500 transition-colors cursor-pointer self-end"
+              className="absolute -top-12 right-0 z-1 text-white hover:text-primary-500 transition-colors cursor-pointer self-end"
               aria-label="Close trailer"
             >
               <X className="size-8" />
